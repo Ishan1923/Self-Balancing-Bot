@@ -1,0 +1,24 @@
+Proportional Controller (P - controller)
+
+sample problem: Suppose there is path, an object's current position be 0 m and the target is 50m. we observe the reading for every 0.01s frame. we have to use the proportional controller to make the object reach the target.
+
+target = 50m
+initial position = 0m
+
+assumptions: The actuators during these calculations are assumed to be linear actuators.
+
+Observations:
+
++----+----------+---------------------+
+|S.no|	Gain	| error decay time(s) |
++----+----------+---------------------+
+| 1. | 10^-7	|	1000	      |
+| 2. | 10^-3	|	1000	      |
+| 3. | 10^-1	|	1000	      |
+| 4. | 5*10^-1	|	500	      |
+| 5. | 1.0	|	50	      |
+| 6. | 1.5	|	30	      |
+| 7. | 2.0	|	25	      |
+| 8. | 10	|	5	      |
+| 9. | 100	|	0.45	      |
++----+----------+---------------------+
