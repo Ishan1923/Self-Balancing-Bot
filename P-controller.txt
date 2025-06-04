@@ -1,24 +1,36 @@
-Proportional Controller (P - controller)
+Proportional Controller (P - controller) - Behavioral Simulation
 
 sample problem: Suppose there is path, an object's current position be 0 m and the target is 50m. we observe the reading for every 0.01s frame. we have to use the proportional controller to make the object reach the target.
 
 target = 50m
 initial position = 0m
+tolerance = 10^-9m
 
 assumptions: The actuators during these calculations are assumed to be linear actuators.
 
 Observations:
 
-+----+----------+---------------------+
-|S.no|	Gain	| error decay time(s) |
-+----+----------+---------------------+
-| 1. | 10^-7	|	1000	      |
-| 2. | 10^-3	|	1000	      |
-| 3. | 10^-1	|	1000	      |
-| 4. | 5*10^-1	|	500	      |
-| 5. | 1.0	|	50	      |
-| 6. | 1.5	|	30	      |
-| 7. | 2.0	|	25	      |
-| 8. | 10	|	5	      |
-| 9. | 100	|	0.45	      |
-+----+----------+---------------------+
+Note: For the Gain values 10^-7, 10^-3, the MATLAB was unable to make a single array that big, for the error to less than tolerance, to record the calculations.
+
++-----+----------+---------------------+
+|S.no |	Gain	 | error decay time(s) |
++-----+----------+---------------------+
+| 1.  | 10^-7	 |	100000	       |
+| 2.  | 10^-3	 |	1000	       |
+| 3.  | 10^-1	 |	650	       |
+| 4.  | 5*10^-1	 |	150	       |
+| 5.  | 1.0	 |	177.267	       |
+| 6.  | 1.5	 |	35.447	       |
+| 7.  | 2.0	 |	17.719	       |
+| 8.  | 10	 |	1.764	       |
+| 9.  | 100	 |	0.169	       |
+| 10. | 500	 |	0.0260	       |				       _
+| 11. | 1000	 |	0.001	       |					|
+| 12. | 10000	 |	0.001	       | => Overshoots due to very high gain	|=> The graph become Linear (S.no 11 and 12); that is the error decreases linearly
++-----+----------+---------------------+				       _|
+
+Thus, in summary:
+	1- The Proportional Controller achieves the target proportionally to the gain factor. The gain increases the less time is needed to approach the target. 
+	2- Overshoot can be observed but only with abruptly high gains.
+	3- The system seems to approach the target, but never reaches it; it is called steady state error. 
+	4- The Graph shows linear characteristics at very high gains and non-linear (exponential) at the lower gains.  
