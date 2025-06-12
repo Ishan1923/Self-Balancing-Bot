@@ -24,7 +24,11 @@
 5. Separate electrostatic discharge protection  
 
 The motor has a total of 16 pins:  
-`-----img------`
+![image](https://github.com/user-attachments/assets/8f653f93-b64b-4fff-8e48-ccdcd06da93a)
+
+![image](https://github.com/user-attachments/assets/472439fc-7dc3-4afc-a07f-cb61df6b5805)
+
+
 
 **Functional block diagram:**  
 ![image](https://github.com/user-attachments/assets/b8e9ef86-de24-439e-8722-6b04d63b8c3b)  
